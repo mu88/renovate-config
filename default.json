@@ -29,7 +29,7 @@
       "automergeType": "branch"
     },
     {
-      "description": "Major updates of .NET SDK and runtime (global.json and Docker images) will be done manually",
+      "description": "Major updates of .NET SDK and runtime will be done manually",
       "matchUpdateTypes": ["major"],
       "matchPackageNames": [
         "dotnet-sdk",
@@ -39,7 +39,9 @@
         "mcr.microsoft.com/dotnet/runtime-deps",
         "Microsoft.AspNetCore.*",
         "Microsoft.Bcl.*",
-        "Microsoft.Extensions.*"
+        "Microsoft.EntityFrameworkCore.*",
+        "Microsoft.Extensions.*",
+        "System.Text.Json"
       ],
       "enabled": false
     }
