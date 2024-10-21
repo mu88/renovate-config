@@ -9,8 +9,8 @@
   ],
   "packageRules": [
     {
-      "description": "Automatically merge minor and patch-level updates",
-      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "description": "Automatically merge updates",
+      "matchUpdateTypes": ["major", "minor", "patch", "digest"],
       "automerge": true,
       "automergeType": "branch"
     },
