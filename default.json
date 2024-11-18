@@ -37,9 +37,9 @@
         "mcr.microsoft.com/dotnet/aspnet",
         "mcr.microsoft.com/dotnet/runtime",
         "mcr.microsoft.com/dotnet/runtime-deps",
-        "Microsoft.AspNetCore.*",
-        "Microsoft.Bcl.*",
-        "Microsoft.EntityFrameworkCore.*",
+        "Microsoft.AspNetCore*",
+        "Microsoft.Bcl*",
+        "Microsoft.EntityFrameworkCore*",
         "Microsoft.Extensions.*",
         "System.Text.Json"
       ],
