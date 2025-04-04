@@ -31,7 +31,7 @@
         "mcr.microsoft.com/dotnet/runtime",
         "mcr.microsoft.com/dotnet/runtime-deps"
       ],
-      "minimumReleaseAge": "14 days",
+      "minimumReleaseAge": "21 days",
       "automerge": true,
       "automergeType": "branch"
     },
@@ -57,9 +57,8 @@
     {
       "customType": "regex",
       "fileMatch": ["^.*\\.csproj$"],
-      "matchStrings": ["<ContainerBaseImage>(?<currentValue>.*?)<\\/ContainerBaseImage>"],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "docker"
+      "matchStrings": ["<ContainerBaseImage>(?<packageName>.*?):(?<currentValue>.*?)<\\/ContainerBaseImage>"],
+      "datasourceTemplate": "docker"
     }
   ]
 }
