@@ -62,9 +62,10 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["\.devcontainer/devcontainer.json"],
-      "matchStrings": ["image.*(?<packageName>mu88\\/devcontainers-dotnet.*):(?<currentValue>sdk-\\d+\\.\\d+\\.\\d+).*"],
-      "datasourceTemplate": "docker"
+      "fileMatch": ["\\.devcontainer/devcontainer.json"],
+      "matchStrings": ["image.*mu88\\/devcontainers-dotnet.*:sdk-(?<currentValue>\\d+\\.\\d+\\.\\d+).*"],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "mcr.microsoft.com/dotnet/sdk"
     }
   ]
 }
