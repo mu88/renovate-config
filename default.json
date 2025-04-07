@@ -59,6 +59,12 @@
       "fileMatch": ["^.*\\.csproj$"],
       "matchStrings": ["<ContainerBaseImage>(?<packageName>.*?):(?<currentValue>.*?)<\\/ContainerBaseImage>"],
       "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["\.devcontainer/devcontainer.json"],
+      "matchStrings": ["image.*(?<packageName>mu88\\/devcontainers-dotnet.*):(?<currentValue>sdk-\\d+\\.\\d+\\.\\d+).*"],
+      "datasourceTemplate": "docker"
     }
   ]
 }
