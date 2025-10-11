@@ -10,13 +10,22 @@
   "packageRules": [
     {
       "description": "Automatically merge updates",
-      "matchUpdateTypes": ["major", "minor", "patch", "digest"],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "digest"
+      ],
       "automerge": true,
       "automergeType": "branch"
     },
     {
       "description": "Wait with non-major updates of .NET SDK and runtime (global.json and Docker images) so that it is likely to be installed on all dev machines, too",
-      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ],
       "matchPackageNames": [
         "dotnet-sdk",
         "mcr.microsoft.com/dotnet/sdk",
@@ -30,7 +39,9 @@
     },
     {
       "description": "Major updates of .NET SDK and runtime will be done manually",
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "matchPackageNames": [
         "dotnet-sdk",
         "mcr.microsoft.com/dotnet/sdk",
@@ -49,14 +60,22 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^.*\\.csproj$"],
-      "matchStrings": ["<ContainerBaseImage>(?<packageName>.*?):(?<currentValue>.*?)<\\/ContainerBaseImage>"],
+      "fileMatch": [
+        "^.*\\.csproj$"
+      ],
+      "matchStrings": [
+        "<ContainerBaseImage>(?<packageName>.*?):(?<currentValue>.*?)<\\/ContainerBaseImage>"
+      ],
       "datasourceTemplate": "docker"
     },
     {
       "customType": "regex",
-      "fileMatch": ["\\.devcontainer/devcontainer.json"],
-      "matchStrings": ["image.*mu88\\/devcontainers-dotnet.*:sdk-(?<currentValue>\\d+\\.\\d+\\.\\d+).*"],
+      "fileMatch": [
+        "\\.devcontainer/devcontainer.json"
+      ],
+      "matchStrings": [
+        "image.*mu88\\/devcontainers-dotnet.*:sdk-(?<currentValue>\\d+\\.\\d+\\.\\d+).*"
+      ],
       "datasourceTemplate": "docker",
       "packageNameTemplate": "mcr.microsoft.com/dotnet/sdk"
     }
