@@ -16,6 +16,7 @@
         "patch",
         "digest"
       ],
+      "minimumReleaseAge": "14 days",
       "automerge": true,
       "automergeType": "branch"
     },
