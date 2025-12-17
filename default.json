@@ -72,6 +72,17 @@
     {
       "customType": "regex",
       "fileMatch": [
+        "^.*\\.csproj$"
+      ],
+      "matchStrings": [
+        "<CustomContainerBaseImageVersion>(?<currentValue>.*?)<\\/CustomContainerBaseImageVersion>"
+      ],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "mcr.microsoft.com/dotnet/aspnet"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
         "\\.devcontainer/devcontainer.json"
       ],
       "matchStrings": [
