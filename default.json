@@ -64,20 +64,20 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^.*\\.csproj$"
+        "^\\S*\\.csproj$"
       ],
       "matchStrings": [
-        "<ContainerBaseImage>(?<packageName>.*?):(?<currentValue>.*?)<\\/ContainerBaseImage>"
+        "<ContainerBaseImage>(?<packageName>\\S+):(?<currentValue>\\S+)<\/ContainerBaseImage>"
       ],
       "datasourceTemplate": "docker"
     },
     {
       "customType": "regex",
       "fileMatch": [
-        "^.*\\.csproj$"
+        "^\\S*\\.csproj$"
       ],
       "matchStrings": [
-        "<CustomContainerBaseImageVersion>(?<currentValue>.*?)<\\/CustomContainerBaseImageVersion>"
+        "<CustomContainerBaseImageVersion>(?<currentValue>\\S+)<\/CustomContainerBaseImageVersion>"
       ],
       "datasourceTemplate": "dotnet-version",
       "packageNameTemplate": "dotnet-runtime"
@@ -85,10 +85,10 @@
     {
       "customType": "regex",
       "fileMatch": [
-        ".*\\.devcontainer\\/devcontainer\\.json"
+        "^\\S*\\.devcontainer\\/devcontainer\\.json$"
       ],
       "matchStrings": [
-        "image.*mu88\\/devcontainers-dotnet.*:sdk-(?<currentValue>\\d+\\.\\d+\\.\\d+).*"
+        "image\\S*mu88\\/devcontainers-dotnet\\S*:sdk-(?<currentValue>\\d+\\.\\d+\\.\\d+)\\S*"
       ],
       "datasourceTemplate": "dotnet-version",
       "packageNameTemplate": "dotnet-sdk"
@@ -99,9 +99,9 @@
         ".*"
       ],
       "matchStrings": [
-        ".*mcr\\.microsoft\\.com\\/dotnet\\/aspnet:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*",
-        ".*mcr\\.microsoft\\.com\\/dotnet\\/runtime:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*",
-        ".*mcr\\.microsoft\\.com\\/dotnet\\/runtime-deps:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*"
+        "\\S*mcr\\.microsoft\\.com\\/dotnet\\/aspnet:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*",
+        "\\S*mcr\\.microsoft\\.com\\/dotnet\\/runtime:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*",
+        "\\S*mcr\\.microsoft\\.com\\/dotnet\\/runtime-deps:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*"
       ],
       "datasourceTemplate": "dotnet-version",
       "packageNameTemplate": "dotnet-runtime"
@@ -109,10 +109,10 @@
     {
       "customType": "regex",
       "fileMatch": [
-        ".*"
+        "^\\S*$"
       ],
       "matchStrings": [
-        ".*mcr\\.microsoft\\.com\\/dotnet\\/sdk:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*"
+        "\\S*mcr\\.microsoft\\.com\\/dotnet\\/sdk:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*"
       ],
       "datasourceTemplate": "dotnet-version",
       "packageNameTemplate": "dotnet-sdk"
