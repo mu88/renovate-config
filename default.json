@@ -29,6 +29,7 @@
       ],
       "matchPackageNames": [
         "dotnet-sdk",
+        "dotnet-runtime",
         "mcr.microsoft.com/dotnet/sdk",
         "mcr.microsoft.com/dotnet/aspnet",
         "mcr.microsoft.com/dotnet/runtime",
@@ -45,6 +46,7 @@
       ],
       "matchPackageNames": [
         "dotnet-sdk",
+        "dotnet-runtime",
         "mcr.microsoft.com/dotnet/sdk",
         "mcr.microsoft.com/dotnet/aspnet",
         "mcr.microsoft.com/dotnet/runtime",
@@ -77,8 +79,8 @@
       "matchStrings": [
         "<CustomContainerBaseImageVersion>(?<currentValue>.*?)<\\/CustomContainerBaseImageVersion>"
       ],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "mcr.microsoft.com/dotnet/aspnet"
+      "datasourceTemplate": "dotnet-version",
+      "packageNameTemplate": "dotnet-runtime"
     },
     {
       "customType": "regex",
@@ -88,8 +90,32 @@
       "matchStrings": [
         "image.*mu88\\/devcontainers-dotnet.*:sdk-(?<currentValue>\\d+\\.\\d+\\.\\d+).*"
       ],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "mcr.microsoft.com/dotnet/sdk"
+      "datasourceTemplate": "dotnet-version",
+      "packageNameTemplate": "dotnet-sdk"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        ".*"
+      ],
+      "matchStrings": [
+        ".*mcr\\.microsoft\\.com\\/dotnet\\/aspnet:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*",
+        ".*mcr\\.microsoft\\.com\\/dotnet\\/runtime:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*",
+        ".*mcr\\.microsoft\\.com\\/dotnet\\/runtime-deps:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*"
+      ],
+      "datasourceTemplate": "dotnet-version",
+      "packageNameTemplate": "dotnet-runtime"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        ".*"
+      ],
+      "matchStrings": [
+        ".*mcr\\.microsoft\\.com\\/dotnet\\/sdk:(?<currentValue>\\d+(\\.\\d+)?(\\.\\d+)?).*"
+      ],
+      "datasourceTemplate": "dotnet-version",
+      "packageNameTemplate": "dotnet-sdk"
     }
   ]
 }
