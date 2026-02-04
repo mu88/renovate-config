@@ -85,7 +85,7 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "\\.devcontainer/devcontainer.json"
+        ".*\\.devcontainer\\/devcontainer\\.json"
       ],
       "matchStrings": [
         "image.*mu88\\/devcontainers-dotnet.*:sdk-(?<currentValue>\\d+\\.\\d+\\.\\d+).*"
